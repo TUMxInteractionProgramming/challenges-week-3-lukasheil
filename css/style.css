@@ -1,6 +1,18 @@
 /* #4 #sweat #external css file */
 
-/* GLOBAL */
+
+
+/* !! READ ME FIRST !! */
+
+/* The solving of a given tasks is highlighted with the following comment */
+/* !!!!! Task x !!!!! */
+
+/* New sections of the CSS file are highlightd in the following way */
+/* ++++++++++ Section ++++++++++ */
+
+
+
+/* ++++++++++ GLOBAL ++++++++++ */
 
 /* #4 #global styles*/
 
@@ -15,25 +27,55 @@
 
 body {
     background-color: #F5F5F5;
-}
+    /* background-color: red; */
+  }
 
 /* #4 # sweat #uppercase buttons and w3w locations */
 button, strong {
     text-transform: uppercase;
 }
 
+/* ++++++++++ APP BAR ++++++++++ */
 
-
-/* APP BAR */
+/* !!!!! Task 2 !!!!! */
 
 /* #4 #sweat address both #app-bar s */
+/* Task 2 of the instruction was solved here */
 h1 {
     background-color: #3F51B5;
     color: white;
+    height: 56px;
+
+    /* Aligns content of h1 vertrically */
+    line-height: 56px;
+    
+    /* padding vertically 0px horizontally 16px as recommended by the material guide*/
+    padding: 0px 16px;
+    
+    /*Font properties*/
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.15;        
 }
 
 
-/* CHANNELS LIST */
+/* ++++++++++ CHANNELS LIST ++++++++++ */
+
+/* !!!!! Task 1 !!!!! */
+
+/* Postion, width and alignment of Channel List*/
+#channels{
+    /* Task 1: Postioning the channel list on the left with 40% of total Screen width */
+    width: 40%;
+    height: 100%;
+    
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+ }
+
+ /* !!!!! Task 2.2 !!!!! */
 
 /* #4 #sweat #channels */
 ul {
@@ -41,6 +83,15 @@ ul {
     background-color: white;
     /* #3 #channels #bullets removed */
     list-style-type: none;
+    /* Position between app bar and nav bar*/
+    position: absolute;
+    top: 56px;
+    bottom: 56px;
+    left: 0px;
+    right: 0px;
+
+    /* Task 2.2 was solved here */
+    overflow-y: scroll;
 }
 
 li {
@@ -62,16 +113,36 @@ li.selected {
 li img {
     /* #4 #middle vertical alignment of icons in the #channels list */
     vertical-align: middle;
+
+    /* display: inline;
+    margin: auto; */
 }
 
-/* TAB BAR */
+/* ++++++++++ TAB BAR ++++++++++ */
+
+/* !!!!! Task 3 !!!!! */
+/* !!!!! Task 5 !!!!! */
+
+/* Task 5 was solved here using a Flexbox*/
+/* Task 5 was solved here wie the combinded css selector */
 
 /* #4 #sweat #tab-bar */
-#tab-bar {
+
+#tab-bar,#chat-bar{
     /* #3 #tab-bar #container should be white */
     background-color: white;
+        
     /* #3 #tab-bar #container has all buttons centered */
     text-align: center;
+    position: absolute;
+    bottom: 0px;
+
+    /*Defintion of Flexbox*/
+    display: inline-flex;
+    
+    /* Properties of Flexbox*/
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 /* #4 add styles to #tab-bar #buttons */
@@ -98,8 +169,33 @@ li img {
     border-bottom: 4px solid #3F51B5;
 }
 
+#chat-bar #emojis-button{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+
+    /* display: flex;  */
+}
 
 /* MESSAGES */
+
+/* Postion, width and alignment of Chat*/
+
+#chat{
+    /* Postioning the chat on the right with 60% of total Screen width */
+
+    width: 60%;
+    height: 100%;
+    
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    /* background-color: #CDDC39; */
+
+    overflow-y: scroll;
+}
+
 /* #4 select #specific #messages by class and re-assign element styles according to their #hierarchy in a nested way */
 .message {
     /* #3 #chat #width*/
@@ -112,9 +208,16 @@ li img {
     margin-bottom: 8px;
 }
 
+/* !!!!! Task 4 !!!!! */
 
 .message h3 {
     font-size: medium;
+
+    /* Tasl 4 was solved here using flex */
+    /* Properties of the flex box */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .message h3 em {
@@ -136,6 +239,12 @@ li img {
     background-color: #CDDC39;
     color: black;
     text-transform: uppercase;
+
+    /* float: right; */
+    position: relative;
+
+    bottom: 8px;
+    right: 8px;
 }
 
 /* #4 left align own #messages using #margins */
@@ -143,3 +252,46 @@ li img {
     margin-left: 17.5%;
 }
 
+/* Class that contains the images of the channel tiles */
+.channel-meta{
+    float: right;
+
+    /* display: inline-block; */
+    vertical-align: middle;
+
+    border-style: dashed;
+}
+
+/* !!!!! Task 6 !!!!! */
+/* !!!!! Task 7 !!!!! */
+
+/* Task 6: Styling of the emoji box */
+#chat-bar div{
+    /*Square shape of the whole box*/
+    width: 350px;
+    height: 350px;
+
+    /*general properties of the box*/   
+    background-color: white;
+
+    font-size: 28px;
+    text-align: left;
+
+    /* padding, border and margin of box*/
+    margin-top: 284px;
+    margin-left: 16px;
+
+    padding: 16px;
+    border: 1px solid black;
+     
+    /* positioning of emoji box*/
+    position: absolute;
+    bottom: 40px;
+    left: 2px;
+
+    /* Task 7 was solved here using the overflow-y property */
+    /* Visibility over chat and scrolling enabled, when too many emojis */
+    overflow: visible;
+    overflow-y: auto;
+
+}
